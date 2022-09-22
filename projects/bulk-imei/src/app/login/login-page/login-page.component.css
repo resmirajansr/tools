@@ -1,0 +1,59 @@
+.card1{
+    min-width: 400px;
+    position: absolute;
+    text-align: center;
+    top: 50%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+  }
+  .buttoncolor{
+    background-color: rgb(218, 8, 130);
+    color: white;
+  }
+  .textsize{ 
+  font-size: 14px;
+  font-weight: 500;
+  }
+  .errormsg{
+    font-size: 12px;
+    background-color: rgb(247, 211, 232);
+    color: rgb(218, 8, 130);
+    border:rgb(247, 211, 232);
+    padding: 9px;
+  }
+
+  .iconsize{
+    font-size: 3pc;
+  }
+.cardposition{
+  height: 5pc;
+  width: 20pc;
+}
+
+.headback {
+  background-color: rgb(218, 8, 130);
+  padding: 5px;
+  color: white;
+  font-weight: 500;
+  text-align: center !important;
+}
+.headerstyle {
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.footerback {
+  background-color: rgb(218, 8, 130);
+  padding: 3px;
+  color: white;
+  font-weight: 500;
+  text-align: center !important;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footerstyle {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}

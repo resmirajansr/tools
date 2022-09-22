@@ -1,0 +1,38 @@
+
+<nav class="headback">
+    <span class="headerstyle" >  
+      Handset Blocking Tool</span>
+</nav>
+<div class="card1">
+    <form [name]="accountDetailsForm" [formGroup]="accountDetailsForm" class="text-center border p-5">
+
+        <i class="fa fa-user-circle iconsize"></i>       
+        <!-- Email -->
+        <div class="textsize text-left">Email</div>
+        <input type="email" id="email" formControlName="email"  [(ngModel)]="LoginUserData.username" class="form-control mb-2" required />
+        <!-- Password -->
+        <div class="textsize text-left">Password</div>
+        <input type="password" id="Password" formControlName="password" [(ngModel)]="LoginUserData.password" class="form-control mb-4" required />
+        <button type="button" [disabled]="!accountDetailsForm.valid" 
+        (click)="loginUser()" class="btn form-control buttoncolor mb-4"> Login
+        </button>
+        <!-- validation msg -->
+        <div class=cardposition>
+        <div class="card errormsg"
+            *ngIf="(accountDetailsForm.get('email')?.invalid && accountDetailsForm.get('email')?.touched ) || (accountDetailsForm.get('password')?.invalid && accountDetailsForm.get('password')?.touched)">
+            <span *ngIf="accountDetailsForm.get('email')?.invalid && accountDetailsForm.get('email')?.touched">
+                Enter valid email.</span>
+            <span *ngIf="accountDetailsForm.get('password')?.invalid && accountDetailsForm.get('password')?.touched">
+                Password does not meet minimum length requirements.</span>
+        </div>
+        <div class="card errormsg" *ngIf="showerrormsg && !((accountDetailsForm.get('email')?.invalid && accountDetailsForm.get('email')?.touched ) || (accountDetailsForm.get('password')?.invalid && accountDetailsForm.get('password')?.touched))">
+            <span>{{msg}}</span>
+        </div>
+    </div>
+    </form>
+</div>
+<ng-container>
+    <nav class="footerback">
+    <span class="footerstyle" >    © Copyright 2021. All Rights Reserved</span>
+    </nav>
+</ng-container>

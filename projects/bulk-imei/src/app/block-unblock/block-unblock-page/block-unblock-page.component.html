@@ -1,0 +1,50 @@
+
+<nav class="headback">
+    <span class="headerstyle" >Handset Blocking Tool</span>
+</nav>
+<div class="col-sm-12 row blockform">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8"> 
+        <form >
+            <div>
+                <input type="radio"  class="radiosize" value="Block"id="b" name="block" (change) = "getReasonlist(blockdataModel.blockStatus)" > Block <br>
+                <input type="radio"   class="radiosize" value="UnBlock" id="u"name="block"(change) = "getReasonlist(blockdataModel.blockStatus)"   > Unblock  
+            </div><br>
+            <div>
+                <span class="textstyle">Select a Reason Code</span><br>
+                <select  class="textareacss" [(value)]="blockdataModel.reasonCode" required  
+               >
+                    <option *ngFor="let option of BlockUnblockList" [value]="option.reasonCode">{{option.reasonDescription}}</option>
+                </select> 
+            </div>
+            <div>
+                <span class="textstyle">Enter the list of IMEI's to be changed here.The list can be seperated on new lines by tabs or by commas.</span>
+                <br>   
+                <textarea matInput class="textareacss" required 
+                placeholder="111222 333"></textarea>
+            </div>  
+            <button type="button" (click)="UpdateImeiList()"  class="btn form-control buttoncolor"> Submit
+            </button><br><br>
+            <table class="table table-striped textstyle" *ngIf="UpdatedImeiList.length !== 0">
+                <thead>
+                <tr>
+                  <th scope="col">IMEI</th>
+                  <th scope="col">Message</th>                 
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let data of UpdatedImeiList; index as i">                                
+                  <td scope="row">{{ data.blockStatus  }}</td>
+                  <td>{{ data.reasonCode }}</td>
+                </tr>
+                </tbody>
+              </table>
+        </form>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<ng-container>
+    <nav class="footerback">
+    <span class="footerstyle" >    © Copyright 2021. All Rights Reserved</span>
+    </nav>
+</ng-container>
